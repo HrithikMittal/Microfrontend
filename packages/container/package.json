@@ -1,6 +1,9 @@
 {
   "name": "container",
   "version": "1.0.0",
+  "author": {
+    "name": "Adhikansh Mittal"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --config config/webpack.dev.js",
