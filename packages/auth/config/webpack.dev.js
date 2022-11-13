@@ -7,16 +7,17 @@ const devConfig = {
   mode: "development",
   devtool: "source-map",
   devServer: {
-    port: 8080,
+    port: 8082,
     historyApiFallback: {
       index: "/index.html",
     },
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "container",
-      remotes: {
-        marketing: "marketing@http://localhost:8081/remoteEntry.js",
+      name: "auth",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./AuthApp": "./src/bootstrap",
       },
       // shared: ["react", "react-dom"],
       shared: packageJson.dependencies,
